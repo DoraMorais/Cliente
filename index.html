@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FORMULÁRIO</title>
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
@@ -36,7 +35,6 @@
          id=" name"
          placeholder=" Digite o seu nome"
        />
-    <a> error</a>
 </div>
        <div class=" form-content">
         <label for=" email"> Seu email: </label>
@@ -45,27 +43,24 @@
          id=" email"
           placeholder=" Digite o seu email"
        />
-        <a> error</a>
        </div>
 
        <div class=" form-content">
         <label for=" age"> Idade: </label>
        <input 
-       type=" text"
+       type=" number"
         id=" age" 
-        placeholder=" Digite a sua idade,"
-       />
-       <a> error</a>
+        placeholder=" Digite a sua idade">
        </div>
 
-       <div class=" form-content">
-        <label for=" adress"> Seu endereço: </label>
-       <input 
-       type=" text" 
-       id=" adress" 
-       placeholder=" Digite o seu endereço"
-       />
-       <a>error</a>
+       <div class="form-content">
+        <label for="address">Seu endereço:</label>
+        <input 
+            type="text" 
+            id="address" 
+            placeholder="Digite o seu endereço"
+            autocomplete="street-address"
+        />
        </div>
 
        <div class=" form-content">
@@ -78,36 +73,33 @@
             <option value="opcao3"> Desempregado</option>
             <option value="opcao4"> Cursando no ensino superior</option>
         </select>
-
-       <a>error</a>
        </div>
 
-       <div class=" form-content">
-        <label for=" password"> Sua Senha: </label>
-       <input 
-       type= "password"
-        id=" password"
-         placeholder=" Digite a sua senha"
-       />
-       <a>error</a>
-       </div>
+       <div class="form-content">
+        <label for="password">Sua Senha:</label>
+        <input 
+            type="password"
+            id="password"
+            placeholder="Digite a sua senha"
+            autocomplete="new-password"
+        />
+        </div>      
+       
+         <div class="form-content">
+            <label for="passwordconfirmation">Confirmação de senha:</label>
+            <input
+            type="password"
+            id="passwordconfirmation"
+            placeholder="Confirme a sua senha"
+            autocomplete="new-password"
+            />
+            </div>
 
-       <div class=" form-content">
-        <label for=" passwordconfirmation"> Confirmação de senha: </label>
-       <input
-        type= "password"
-        id=" asswpord-confirmation" 
-        placeholder=" Confirme a sua senha"
-       />
-      <a> error</a>
-       </div>
-
-       <button type="onclick"> Enviar</button>
+      <button id="submit-btn" type="button"> ENVIAR</button>
 
         </div>
     </form>
  </div>
-
- <script src="./script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
