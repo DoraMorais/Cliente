@@ -1,38 +1,38 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const submitBtn = document.getElementById('submit-btn');
+document.addEventListener("DOMContentLoaded", function () { 
+    const form = document.getElementById('form');
+    const userName = document.getElementById('name');
+    const email = document.getElementById('email');    
+    const age = document.getElementById('age'); 
+    const address = document.getElementById('address');
+    const occupation = document.getElementById('opcoes');
+    const password = document.getElementById('password');
+    const passwordConfirmation = document.getElementById('passwordconfirmation');
 
-    if (!submitBtn) {
-        console.error("Elemento com ID 'submit-btn' não encontrado.");
+    if (!form || !userName || !email || !age || !address || !occupation || !password || !passwordConfirmation) {
+        console.error("Um ou mais elementos do formulário não foram encontrados.");
         return;
     }
 
-    submitBtn.addEventListener('click', function () {
-        const name = document.getElementById('name')?.value.trim('name');
-        const email = document.getElementById('email')?.value.trim('email');
-        const age = document.getElementById('age')?.value.trim('age');
-        const address = document.getElementById('address')?.value.trim('address'); // Certifique-se que o ID no HTML seja "address"
-        const occupation = document.getElementById('opcoes')?.value.trim('opcoes');
-        const password = document.getElementById('password')?.value.trim('password');
-        const passwordConfirmation = document.getElementById('passwordconfirmation')?.value;
+    form.addEventListener("submit", function (event) {
+        event.preventDefault(); 
 
-        if (!name || !email || !age || !address || !occupation || !password || !passwordConfirmation) {
+        if (!userName.value || !email.value || !age.value || !address.value || !occupation.value || !password.value || !passwordConfirmation.value) {
             alert('Por favor, preencha todos os campos.');
             return;
         }
 
-        if (password !== passwordConfirmation) {
+        if (password.value !== passwordConfirmation.value) {
             alert('As senhas não coincidem!');
             return;
         }
 
         const formData = {
-            name,
-            email,
-            age,
-            address,
-            occupation,
-            password,
-            passwordConfirmation,
+            name: userName.value,
+            email: email.value,
+            age: age.value,
+            address: address.value,
+            occupation: occupation.value,
+            password: password.value
         };
 
         fetch('https://seu-servidor.com/api/form', {
@@ -42,12 +42,18 @@ document.addEventListener("DOMContentLoaded", function () {
             },
             body: JSON.stringify(formData)
         })
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Erro ao enviar formulário.');
+            }
+            return response.json();
+        })
         .then(data => {
             console.log('Success:', data);
             alert('Formulário enviado com sucesso!');
+            form.reset(); // Limpa o formulário após envio bem-sucedido
         })
-        .catch((error) => {
+        .catch(error => {
             console.error('Error:', error);
             alert('Erro ao enviar o formulário.');
         });

@@ -4,102 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FORMULÁRIO</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
     <div class="list">
-        <section class="instruções">
-
-           
+      <section class="instruções">
             <ul>
                 <li> Atenção para responder corretamente;</li>
                 <li> Certifique-se que as respostas condizem com suas informações atuais</li>
                 <li> Revise suas respostas</li>
                 <li> Clique no botão de "Enviar" quando finalizar</li>
             </ul>
-        
-    
+        </section>
+    </div>
+
     <div class="container">
         <section class="header">
-
-            <h1> Adicione suas informações no formulário abaixo:</h1>
-
+           <h1> Adicione suas informações no formulário abaixo:</h1>
         </section>  
-    <form id=" form" class="form">
-        <div class=" form-content">
-         <label for=" name"> Nome Completo: </label>
-         <input
-        type=" text"
-         id=" name"
-         placeholder=" Digite o seu nome"
-       />
-</div>
-       <div class=" form-content">
-        <label for=" email"> Seu email: </label>
-        <input
-         type=" text" 
-         id=" email"
-          placeholder=" Digite o seu email"
-       />
-       </div>
-
-       <div class=" form-content">
-        <label for=" age"> Idade: </label>
-       <input 
-       type=" number"
-        id=" age" 
-        placeholder=" Digite a sua idade">
-       </div>
-
-       <div class="form-content">
-        <label for="address">Seu endereço:</label>
-        <input 
-            type="text" 
-            id="address" 
-            placeholder="Digite o seu endereço"
-            autocomplete="street-address"
-        />
-       </div>
-
-       <div class=" form-content">
-       
-        <label for="opcoes">Ocupação:</label>
-        <select id="opcoes" name="opcao">
-            <option value="" disabled selected> Clique para selecionar</option>
-            <option value="opcao1"> Estudante</option>
-            <option value="opcao2"> Trabalhando</option>
-            <option value="opcao3"> Desempregado</option>
-            <option value="opcao4"> Cursando no ensino superior</option>
-        </select>
-       </div>
-
-       <div class="form-content">
-        <label for="password">Sua Senha:</label>
-        <input 
-            type="password"
-            id="password"
-            placeholder="Digite a sua senha"
-            autocomplete="new-password"
-        />
-        </div>      
-       
-         <div class="form-content">
-            <label for="passwordconfirmation">Confirmação de senha:</label>
-            <input
-            type="password"
-            id="passwordconfirmation"
-            placeholder="Confirme a sua senha"
-            autocomplete="new-password"
-            />
+        <form id="form" class="form">
+            <div class="form-content">
+                <label for="name"> Nome Completo: </label>
+                <input type="text" id="name" placeholder="Digite o seu nome" />
             </div>
-
-      <button id="submit-btn" type="button"> ENVIAR</button>
-
+            <div class="form-content">
+                <label for="email"> Seu email: </label>
+                <input type="text" id="email" placeholder="Digite o seu email" />
+            </div>
+            <div class="form-content">
+                <label for="age"> Idade: </label>
+                <input type="number" id="age" placeholder="Digite a sua idade" />
+            </div>
+            <div class="form-content">
+                <label for="address">Seu endereço:</label>
+                <input type="text" id="address" placeholder="Digite o seu endereço" autocomplete="street-address" />
+            </div>
+            <div class="form-content">
+                <label for="opcoes">Ocupação:</label>
+                <select id="opcoes" name="opcao">
+                    <option value="" disabled selected> Clique para selecionar</option>
+                    <option value="opcao1"> Estudante</option>
+                    <option value="opcao2"> Trabalhando</option>
+                    <option value="opcao3"> Desempregado</option>
+                    <option value="opcao4"> Cursando no ensino superior</option>
+                </select>
+            </div>
+            <div class="form-content">
+                <label for="password">Sua Senha:</label>
+                <input type="password" id="password" placeholder="Digite a sua senha" autocomplete="new-password" />
+            </div>      
+            <div class="form-content">
+              <label for="passwordconfirmation">Confirmação de senha:</label>
+              <input type="password" id="passwordconfirmation" placeholder="Confirme a sua senha" autocomplete="new-password" />
+            </div>
+            <button id="submit" type="button"> ENVIAR</button>
+        </form>
         </div>
-    </form>
- </div>
-<script src="script.js"></script>
+
+    <script src="script.js"></script>
 </body>
-</html>
+</html> 
