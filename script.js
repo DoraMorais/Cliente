@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(data => {
             console.log('Success:', data);
             alert('Formulário enviado com sucesso!');
-            form.reset(); // Limpa o formulário após envio bem-sucedido
+            form.reset(); 
         })
         .catch(error => {
             console.error('Error:', error);
