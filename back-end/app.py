@@ -49,4 +49,4 @@ def receive_form():
 
 if __name__ == '__main__':
     db.create_all()  # Cria as tabelas no banco de dados
-    app.run(debug=True)
+    app.run(debug=True) 
