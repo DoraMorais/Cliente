@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
             password: password.value
         };
 
-        fetch('https://seu-servidor.com/api/form', {
+        fetch('https://seu-servidor.com/api/form', {  //neste link ficará local de salvamento das infos.//
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
