@@ -70,6 +70,7 @@ body {
 }
 
 .header {
+    font-family: Arial, Helvetica, sans-serif;
     background: linear-gradient(120deg, #595b5c 0%, #776060 100%);
     padding: 8px;
     text-align: center;
@@ -81,6 +82,7 @@ body {
 }
 
 .form-content {
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
     color: #000000;
     margin-bottom: 8px;
@@ -95,18 +97,13 @@ body {
 }
 
 .form-content input {
-    display: block;
-    width: 100%;
-    border-radius: 8px;
-    padding: 8px;
-    border: 3px solid rgb(242, 238, 247);
-}
+  display: block;
+ width: 100%;
+border-radius: 8px;
+ padding: 8px;
+ border: 3px solid rgb(242, 238, 247);
 
-.form-content a {
-    position: absolute;
-    bottom: -8px;
-    left: 0%;
-}
+ }
 
 .form button {
     background-color: #ffffff;
@@ -118,11 +115,4 @@ body {
     font-size: 19px;
     cursor: pointer;
     margin-top: 14px;
-}
-
-.form-content a {
-    position: absolute;
-    bottom: -8px;
-    visibility: hidden;
-
-}
+ }
