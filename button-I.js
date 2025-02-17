@@ -12,3 +12,4 @@ document.addEventListener("DOMContentLoaded", function () {
         instructionsMenu.style.display = 'none';
     });
 });
+  // esse é o botão de informações do formulário//
