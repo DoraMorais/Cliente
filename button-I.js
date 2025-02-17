@@ -11,4 +11,4 @@ document.addEventListener("DOMContentLoaded", function () {
     closeBtn.addEventListener('click', function () {
         instructionsMenu.style.display = 'none';
     });
-});
+}); 
