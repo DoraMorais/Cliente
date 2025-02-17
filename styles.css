@@ -124,12 +124,5 @@ body {
     position: absolute;
     bottom: -8px;
     visibility: hidden;
-}
-
-.form-content.error input {
-    border-color: red;
-}
-
-.form-content.error a {
-    color: red;
+    
 }
