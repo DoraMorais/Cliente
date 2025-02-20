@@ -17,11 +17,10 @@ body {
     display: none;
     position: fixed;
     top: 20%;
-    left: 50%;
-    transform: translate(-50%, -20%);
+    left: 50%;    transform: translate(-50%, -20%);
     background-color: white;
     border: 2px solid #ccc;
-    padding: 20px;
+  padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
 }
