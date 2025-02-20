@@ -21,7 +21,7 @@ body {
     left: 50%;
     transform: translate(-50%, -20%);
     background-color: rgb(196, 196, 196);
-    border: 2px solid #cccccc;
+    border: 2px solid #cccccc;   
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
