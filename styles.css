@@ -17,16 +17,10 @@ body {
     display: none;
     position: fixed;
     top: 20%;
-    left: 50%;
-    transform: translate(-50%, -20%);
-<<<<<<< HEAD
-    background-color: rgb(196, 196, 196);
-    border: 2px solid #cccccc;   
-=======
+    left: 50%;    transform: translate(-50%, -20%);
     background-color: white;
     border: 2px solid #ccc;
->>>>>>> ac7199cb55fc76429c0cfba95595b228a8b42037
-    padding: 20px;
+  padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
 }
