@@ -17,6 +17,7 @@ body {
     display: none;
     position: fixed;
     top: 20%;
+<<<<<<<<< Temporary merge branch 1
     left: 50%;
     transform: translate(-50%, -20%);
     background-color: white;
