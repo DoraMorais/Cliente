@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function () {
     const instructionsBtn = document.getElementById('instructions-btn');
     const instructionsMenu = document.getElementById('instructions-menu');
