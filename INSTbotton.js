@@ -11,4 +11,4 @@ document.addEventListener("DOMContentLoaded", function () {
         instructionsMenu.style.display = 'none';
     });
 });
-  // esse é o botão de instruções" 
+  // esse é o botão de instruções//
