@@ -1,6 +1,7 @@
 * {
     margin: 0%;
-    padding: 0%;}
+    padding: 0%;
+}
 
 body {
     background: #ffffff;
@@ -11,15 +12,15 @@ body {
     justify-content: center;
     align-items: center;
 }
-
-.instructions-menu {
+                                      
+.instructions-menu {                           
     display: none;
     position: fixed;
     top: 20%;
     left: 50%;
     transform: translate(-50%, -20%);
-    background-color: white;
-    border: 2px solid #ccc;
+    background-color: rgb(196, 196, 196);
+    border: 2px solid #cccccc;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
@@ -42,7 +43,7 @@ body {
     position: fixed;
     top: 10px;
     right: 10px;
-    padding: 10px 20px;
+    padding: 10px 10px;
     background-color: #455361;
     color: white;
     border: none;
@@ -52,8 +53,8 @@ body {
 #close-btn {
     margin-top: 20px;
     padding: 10px 20px;
-    background-color: #dc3545;
-    color: white;
+    background-color: #ca505d;
+    color: rgb(255, 255, 255);
     border: none;
     cursor: pointer;
 }
@@ -61,7 +62,7 @@ body {
 .container {
     background-color: rgb(157, 169, 175);
     border-radius: 20px;
-    margin: 10px;
+    margin: 10px auto;
     max-width: 600px;
     width: 100%;
     box-sizing: border-box;
@@ -83,12 +84,10 @@ body {
 .form-content {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
-    color: #000000;
-    size-adjust: auto;
+   color: #000000;
     margin-bottom: 8px;
-     margin-right: 0px;
-     margin-left: 0px;
-    position: relative;
+   position: relative;
+    text-align: justify;
 }
 
 .form-content label {
@@ -97,14 +96,22 @@ body {
 }
 
 .form-content input {
- margin: 10px;
-display: block;
- width: 100%;
-border-radius: 8px;
- padding: 8px;
- border: 3px solid rgb(242, 238, 247);
+    margin: 10px auto;
+    display: block;
+    width: 80%; 
+    border-radius: 8px;
+    padding: 8px;
+    border: 3px solid rgb(242, 238, 247);
+}
 
- }
+.form-content select {
+    margin: 10px auto;
+    display: block;
+    width: 83%; 
+    border-radius: 8px;
+    padding: 8px;
+    border: 3px solid rgb(242, 238, 247);
+}
 
 .form button {
     background-color: #ffffff;
@@ -116,4 +123,4 @@ border-radius: 8px;
     font-size: 19px;
     cursor: pointer;
     margin-top: 14px;
- }
+}

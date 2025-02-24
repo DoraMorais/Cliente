@@ -11,9 +11,3 @@ document.addEventListener("DOMContentLoaded", function () {
         instructionsMenu.style.display = 'none';
     });
 });
-
-  // esse é o botão de instruções do formulário//
-  //o botão exibe um menu de instruções quando clicado//
-
-  // esse é o botão de instruções//
-
