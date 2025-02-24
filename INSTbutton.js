@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function () {
     const instructionsBtn = document.getElementById('instructions-btn');
     const instructionsMenu = document.getElementById('instructions-menu');
@@ -12,4 +11,3 @@ document.addEventListener("DOMContentLoaded", function () {
         instructionsMenu.style.display = 'none';
     });
 });
-  // esse é o botão de instruções do formulário de informações"
