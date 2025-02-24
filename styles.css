@@ -12,8 +12,8 @@ body {
     justify-content: center;
     align-items: center;
 }
-
-.instructions-menu {
+                                      
+.instructions-menu {                           
     display: none;
     position: fixed;
     top: 20%;
