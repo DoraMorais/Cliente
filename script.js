@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const email = document.getElementById('email');    
     const age = document.getElementById('age'); 
     const address = document.getElementById('address');
-    const occupation = document.getElementById('occupation');
+    const occupation = document.getElementById('opcoes');
     const password = document.getElementById('password');
     const passwordConfirmation = document.getElementById('passwordconfirmation');
 
@@ -57,6 +57,4 @@ document.addEventListener("DOMContentLoaded", function () {
             console.error('Error:', error);
             alert('Erro ao enviar o formulário.');
         });
-    });
-});
-
+    }); });
