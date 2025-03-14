@@ -1,120 +1,101 @@
-* {
-    margin: 0%;
+*{  margin: 0%;
     padding: 0%;}
 
-body {
-    background: #ffffff;
-    width: 100%;
-    padding: 50%;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+
+.list li{
+line-height: 16px;
+margin-left: 3%;
+text-decoration: underline;
+font-size: 20px;
+list-style-type: none;
+font-weight: 700;
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+margin-top:  1%;
+text-align: left;
+padding-bottom: 2%;
+color: rgb(231, 0, 0);
+display: flex;
 }
 
-.instructions-menu {
-    display: none;
-    position: fixed;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -20%);
-    background-color: white;
-    border: 2px solid #ccc;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
+body{
+background: #ffffff;
+width: 100%;
+min-height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+
 }
 
-.instructions-menu h2 {
-    margin-bottom: 10px;
+.container{
+background-color: rgb(56, 160, 212);
+border-radius: 20px;
+margin: 10px;
+max-width: 600px;
+width: 100%;
+box-sizing: 0 3px 5px;
+overflow: hidden;
 }
 
-.instructions-menu ul {
-    list-style-type: none;
-    padding: 0;
+
+
+.header{
+background:linear-gradient(120deg, #65d0fa 0%, #578ff7 100%);
+padding: 8px;
+text-align: center;
+color: #000000;
 }
 
-.instructions-menu ul li {  
-    margin-bottom: 10px;
+.form{
+padding: 18px;
 }
-
-#instructions-btn {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    padding: 10px 20px;
-    background-color: #455361;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-#close-btn {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #dc3545;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-.container {
-    background-color: rgb(157, 169, 175);
-    border-radius: 20px;
-    margin: 10px;
-    max-width: 600px;
-    width: 100%;
-    box-sizing: border-box;
-    overflow: hidden;
-}
-
-.header {
-    font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(120deg, #595b5c 0%, #776060 100%);
-    padding: 8px;
-    text-align: center;
-    color: #ffffff;
-}
-
-.form {
-    padding: 18px;
-}
-
-.form-content {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
+.form-content{
+    font-size: 20px;
     color: #000000;
-    size-adjust: auto;
     margin-bottom: 8px;
-     margin-right: 0px;
-     margin-left: 0px;
+    padding-bottom: 18px;
     position: relative;
 }
+.form-content label{
+display: inline-block;
+margin-bottom: 10px;
 
-.form-content label {
-    display: inline-block;
-    margin-bottom: auto;
+}
+.form-content input{
+    display: block;
+    width: 100%;
+    border-radius: 8px;
+    padding: 8px;
+    border: 3px solid rgb(242, 238, 247);
+}
+.form-content a{
+    position: absolute;
+    bottom: -8px;
+    left: 0%;
+
+}
+.form button{
+background-color: #ffffff;
+color: #000000;
+width: 100%;
+border-radius: 14px;
+padding: 8px;
+border:0;
+font-size: 19px;
+cursor: pointer;
+margin-top: 14px;
 }
 
-.form-content input {
- margin: 10px;
-display: block;
- width: 100%;
-border-radius: 8px;
- padding: 8px;
- border: 3px solid rgb(242, 238, 247);
+.form-content a{
+    position: absolute;
+bottom: -8px;
+visibility: hidden;
+}
 
- }
+.form-content.error input{
+border-color: red;
+}
 
-.form button {
-    background-color: #ffffff;
-    color: #000000;
-    width: 100%;
-    border-radius: 14px;
-    padding: 8px;
-    border: 0;
-    font-size: 19px;
-    cursor: pointer;
-    margin-top: 14px;
- }
+.form-content.error a{
+color: red;
+}
