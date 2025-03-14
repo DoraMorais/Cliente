@@ -5,8 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FORMULÁRIO</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .instructions-menu {
+            display: none;
+        }
+    </style>
 </head>
- <body>
+<body>
     <button id="instructions-btn">Instruções</button>
     <div id="instructions-menu" class="instructions-menu">
         <h2>Instruções</h2>
@@ -61,11 +66,11 @@
                 <label for="passwordconfirmation">Confirmação de senha:</label>
                 <input type="password" id="passwordconfirmation" placeholder="Confirme a sua senha" autocomplete="new-password" />
             </div>
-            <button id="submit" type="button">ENVIAR</button>
+            <button id="submit" type="submit">ENVIAR</button>
         </form>
     </div>
 
-    <script src="script.js"></script>
-    <script src="button-I.js">   </script>
+    <script src="INSTbutton.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
