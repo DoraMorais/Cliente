@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const email = document.getElementById('email');    
     const age = document.getElementById('age'); 
     const address = document.getElementById('address');
-    const occupation = document.getElementById('opcoes');
+    const occupation = document.getElementById('occupation');
     const password = document.getElementById('password');
     const passwordConfirmation = document.getElementById('passwordconfirmation');
 
