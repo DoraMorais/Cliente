@@ -57,4 +57,5 @@ document.addEventListener("DOMContentLoaded", function () {
             console.error('Error:', error);
             alert('Erro ao enviar o formulário.');
         });
-    }); });
+    });
+});
