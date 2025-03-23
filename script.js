@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", function () { 
     const form = document.getElementById('form');
     const userName = document.getElementById('name');
@@ -35,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
             password: password.value
         };
 
-        fetch('https://seu-servidor.com/api/form', {  //neste link ficará local de salvamento das infos.//
+        fetch('http://localhost:8080/pessoa', { 
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
