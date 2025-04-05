@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
         };
 
         try {
-            const response = await fetch('http://localhost:5432/ordemservico', {
+            const response = await fetch('jdbc:postgresql://localhost:5432/ordemservico', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
