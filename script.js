@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function () { 
     const form = document.getElementById('form');
     const userName = document.getElementById('name');
@@ -14,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
-    form.addEventListener("submit", function (event) {
+    form.addEventListener("submit", async function (event) {
         event.preventDefault(); 
 
         if (!userName.value || !email.value || !age.value || !address.value || !occupation.value || !password.value || !passwordConfirmation.value) {
@@ -27,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        const formData = {
+        const pessoa = {
             name: userName.value,
             email: email.value,
             age: age.value,
@@ -36,27 +35,25 @@ document.addEventListener("DOMContentLoaded", function () {
             password: password.value
         };
 
-        fetch('http://localhost:8080/pessoa', { 
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(formData)
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Erro ao enviar formulário.');
+        try {
+            const response = await fetch('http://localhost:8080/pessoa', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(pessoa) // Agora enviando a variável correta
+            });
+        console.log(pessoa);
+            if (response.ok) {
+                const message = await response.text();
+                alert(message);
+            } else {
+                alert('Erro ao cadastrar. Tente novamente.');
+                console.error('Erro:', response.status);
             }
-            return response.json();
-        })
-        .then(data => {
-            console.log('Success:', data);
-            alert('Formulário enviado com sucesso!');
-            form.reset(); 
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('Erro ao enviar o formulário.');
-        });
+        } catch (error) {
+            console.error('Erro na requisição:', error);
+            alert('Erro de conexão com o servidor.');
+        }
     });
 });
