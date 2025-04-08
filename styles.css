@@ -1,9 +1,11 @@
 * {
-  margin: 0%;
-  padding: 0%;}
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+}
 
 body {
-  background: #9c9a9a;
+  background: #433f3f;
   width: 100%;
   min-height: 100vh;
   display: flex;
@@ -46,77 +48,104 @@ body {
   position: fixed;
   top: 10px;
   right: 10px;
-  padding: 10px 20px;
-  background-color: rgb(94, 94, 94);
+  padding: 12px 25px; 
+  background-color: rgba(0, 0, 0, 0.433);
   color: rgb(246, 246, 246);
   border: none;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 #close-btn {
   margin-top: 20px;
-  padding: 10px 20px;
+  padding: 12px 25px; 
   background-color: #dc3545;
   color: rgb(253, 253, 253);
   border: none;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 .container {
-  background-color: rgb(94, 94, 94);
+  background-color: rgb(49, 48, 48);
   border-radius: 20px;
-  margin: 5px;
+  margin: 10px;
   max-width: 600px;
   width: 100%;
+  padding: 20px; 
   box-sizing: border-box;
-  overflow: hidden;
-}
+ }
 
 .header {
   font-family: Arial, Helvetica, sans-serif;
-  background: black;
-  padding: 8px;
+  background: rgba(0, 0, 0, 0.433);
+  padding: 10px; 
+  border-radius:18px ;
   text-align: center;
   color: #ffffff;
+  margin-bottom: 15px; 
 }
 
 .form {
-  padding: 18px;
+  padding: 20px; 
 }
 
 .form-content {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   color: #ffffff;
-  size-adjust: auto;
-  margin-bottom: 8px;
-   margin-right: 1px;
-   margin-left: 1px;
+  margin-bottom: 15px; 
   position: relative;
+  cursor: pointer;
 }
 
 .form-content label {
-  display: inline-block;
-  margin-bottom: auto;
+  display: block;
+  margin-bottom: 8px; 
+}
+
+.form-content .error-message {
+  color: red;
+  font-size: 0.872rem;
+  display: none;
+  position: absolute;
+  bottom: -25px;
+  left: 10px;
+  width: 100%;
+  margin-top: 4px;
+  text-align: center;
 }
 
 .form-content input {
-margin: 12px;
-display: block;
-width: 91%;
-border-radius: 8px;
-padding: 9px;
-border: 3px solid rgb(242, 238, 247);
-
+  margin: 12px 0;
+  display: block;
+  width: 100%; 
+  border-radius: 8px;
+  padding: 12px;
+  border: 3px solid rgb(242, 238, 247);
 }
+
 .form button {
-  background-color: #ffffff;
-  color: #000000;
+  background-color: rgba(0, 0, 0, 0.4333);
+  color: #ffffff;
   width: 100%;
   border-radius: 14px;
-  padding: 8px;
+  padding: 12px;
   border: 0;
-  font-size: 19px;
-  cursor: pointer;
-  margin-top: 14px;
+   cursor: pointer;
+  margin-top: 20px; 
+}
+
+.form button:hover {
+  background-color: rgba(211, 196, 196, 0.6); 
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  .header {
+    font-size: 1.2rem;
+  }
 }
