@@ -125,10 +125,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 alert("Erro ao buscar as pessoas. Verifique a conexão com o servidor.");
               }
             }
-          
+
             window.editarPessoa = function (id) {
-              alert(`Função de edição ainda não implementada. ID: ${id}`);
-              // Aqui você poderia abrir um modal ou redirecionar para outro formulário
+              window.location.href = `editarPessoa.html?id=${id}`;
             };
           
             window.excluirPessoa = async function (id) {
@@ -176,5 +175,68 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('ocupacao').value = data.ocupacao;
       })
       .catch(error => console.error('Erro ao carregar os dados:', error));
+  }
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const urlParams = new URLSearchParams(window.location.search);
+  const id = urlParams.get('id');
+
+  if (id) {
+    // Busca a pessoa pelo ID na porta 8081
+    fetch(`http://localhost:8080/api/pessoa/${id}`)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Erro ao buscar dados da pessoa');
+        }
+        return response.json();
+      })
+      .then(data => {
+        // Preenche os campos do formulário com os dados
+        document.getElementById('id').value = data.id;
+        document.getElementById('nome').value = data.nome;
+        document.getElementById('email').value = data.email;
+        document.getElementById('idade').value = data.idade;
+        document.getElementById('endereco').value = data.endereco;
+        document.getElementById('ocupacao').value = data.ocupacao;
+      })
+      .catch(error => {
+        console.error('Erro ao carregar os dados da pessoa:', error);
+        alert('Erro ao carregar os dados para edição.');
+      });
+
+    // Listener para o submit do form de edição
+    const form = document.querySelector('form');
+    form.addEventListener('submit', async function (event) {
+      event.preventDefault();
+
+      const pessoaAtualizada = {
+        nome: document.getElementById('nome').value,
+        email: document.getElementById('email').value,
+        idade: document.getElementById('idade').value,
+        endereco: document.getElementById('endereco').value,
+        ocupacao: document.getElementById('ocupacao').value
+      };
+
+      try {
+        const response = await fetch(`http://localhost:8080/api/pessoa/${id}`, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(pessoaAtualizada)
+        });
+
+        if (response.ok) {
+          alert('Pessoa atualizada com sucesso!');
+          window.location.href = 'listar.html'; // Redireciona pra listagem, se quiser
+        } else {
+          throw new Error('Erro ao atualizar pessoa');
+        }
+      } catch (error) {
+        console.error('Erro ao atualizar:', error);
+        alert('Erro ao atualizar pessoa. Verifique e tente novamente.');
+      }
+    });
   }
 });
