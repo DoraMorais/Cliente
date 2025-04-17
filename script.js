@@ -178,65 +178,60 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', async function () {
   const urlParams = new URLSearchParams(window.location.search);
   const id = urlParams.get('id');
+  const form = document.getElementById('form');
 
-  if (id) {
-    // Busca a pessoa pelo ID na porta 8081
-    fetch(`http://localhost:8080/api/pessoa/${id}`)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Erro ao buscar dados da pessoa');
-        }
-        return response.json();
-      })
-      .then(data => {
-        // Preenche os campos do formulário com os dados
-        document.getElementById('id').value = data.id;
-        document.getElementById('nome').value = data.nome;
-        document.getElementById('email').value = data.email;
-        document.getElementById('idade').value = data.idade;
-        document.getElementById('endereco').value = data.endereco;
-        document.getElementById('ocupacao').value = data.ocupacao;
-      })
-      .catch(error => {
-        console.error('Erro ao carregar os dados da pessoa:', error);
-        alert('Erro ao carregar os dados para edição.');
+  if (!id || !form) return;
+
+  // Preencher os campos do formulário com os dados da pessoa
+  try {
+    const response = await fetch(`http://localhost:8080/api/pessoa/${id}`);
+    if (!response.ok) throw new Error('Erro ao buscar dados da pessoa.');
+
+    const data = await response.json();
+
+    document.getElementById('pessoa-id').value = data.id;
+    document.getElementById('name').value = data.nome;
+    document.getElementById('email').value = data.email;
+    document.getElementById('age').value = data.idade;
+    document.getElementById('address').value = data.endereco;
+    document.getElementById('opcoes').value = data.ocupacao;
+
+  } catch (error) {
+    console.error('Erro ao carregar os dados da pessoa:', error);
+    alert('Erro ao carregar os dados para edição.');
+    return;
+  }
+
+  // Submeter as alterações
+  form.addEventListener('submit', async function (event) {
+    event.preventDefault();
+
+    const pessoaAtualizada = {
+      nome: document.getElementById('name').value,
+      email: document.getElementById('email').value,
+      idade: parseInt(document.getElementById('age').value),
+      endereco: document.getElementById('address').value,
+      ocupacao: document.getElementById('opcoes').value
+    };
+
+    try {
+      const response = await fetch(`http://localhost:8080/api/pessoa/${id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(pessoaAtualizada)
       });
 
-    // Listener para o submit do form de edição
-    const form = document.querySelector('form');
-    form.addEventListener('submit', async function (event) {
-      event.preventDefault();
+      if (!response.ok) throw new Error('Erro ao atualizar pessoa.');
 
-      const pessoaAtualizada = {
-        nome: document.getElementById('nome').value,
-        email: document.getElementById('email').value,
-        idade: document.getElementById('idade').value,
-        endereco: document.getElementById('endereco').value,
-        ocupacao: document.getElementById('ocupacao').value
-      };
-
-      try {
-        const response = await fetch(`http://localhost:8080/api/pessoa/${id}`, {
-          method: 'PUT',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(pessoaAtualizada)
-        });
-
-        if (response.ok) {
-          alert('Pessoa atualizada com sucesso!');
-          window.location.href = 'listar.html'; // Redireciona pra listagem, se quiser
-        } else {
-          throw new Error('Erro ao atualizar pessoa');
-        }
-      } catch (error) {
-        console.error('Erro ao atualizar:', error);
-        alert('Erro ao atualizar pessoa. Verifique e tente novamente.');
-      }
-    });
-  }
+      alert('Pessoa atualizada com sucesso!');
+      window.location.href = 'listarPessoas.html';
+    } catch (error) {
+      console.error('Erro ao atualizar:', error);
+      alert('Erro ao atualizar pessoa. Tente novamente.');
+    }
+  });
 });
+
