@@ -1,7 +1,7 @@
 /* -------- GERAL -------- */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f2f2f2;
+  background-color: rgb( 49, 48, 48);
   margin: 0;
   padding: 0;
 }
@@ -10,7 +10,7 @@ body {
   max-width: 800px;
   width: 90%;
   margin: 40px auto;
-  background-color: #e6e6e6;
+  background-color: #878787;
   padding: 25px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -19,7 +19,7 @@ body {
 /* -------- TÍTULOS -------- */
 h1 {
   text-align: center;
-  color: #1e7280;
+  color: #e8e8e8;
   margin-bottom: 20px;
 }
 
