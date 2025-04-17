@@ -1,54 +1,139 @@
+/* -------- GERAL -------- */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .container {
-    width: 90%;
-    margin: 30px auto;
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 0px 8px rgba(0,0,0,0.1);
-  }
-  
-  h1 {
-    text-align: center;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-  }
-  
-  thead {
-    background-color: #007bff;
-    color: white;
-  }
-  
-  th, td {
-    padding: 12px;
-    text-align: left;
-    border: 1px solid #ccc;
-  }
-  
-  button {
-    padding: 6px 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .edit-btn {
-    background-color: #ffc107;
-    color: white;
-  }
-  
-  .delete-btn {
-    background-color: #dc3545;
-    color: white;
-  }
-  
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  width: 90%;
+  margin: 40px auto;
+  background-color: #e6e6e6;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* -------- TÍTULOS -------- */
+h1 {
+  text-align: center;
+  color: #1e7280;
+  margin-bottom: 20px;
+}
+
+/* -------- TABELA -------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+thead {
+  background-color: #1e7280;
+  color: #fff;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #1e7280;
+}
+
+/* -------- BOTÕES -------- */
+button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.edit-btn {
+  background-color: #ffc107;
+  color: white;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+button#submit {
+  background-color: #1e7280;
+  color: white;
+  font-size: 16px;
+  padding: 10px 16px;
+  margin-top: 10px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+button#submit:hover {
+  background-color: #155d66;
+  transform: scale(1.03);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* -------- FORMULÁRIO -------- */
+form.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.form-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-content label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.form-content input,
+.form-content select {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  transition: border 0.3s ease;
+}
+
+.form-content input:focus,
+.form-content select:focus {
+  outline: none;
+  border-color: #1e7280;
+  box-shadow: 0 0 5px rgba(30, 114, 128, 0.3);
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  display: none;
+}
+
+/* -------- LINK VOLTAR -------- */
+.voltar-link {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: #1e7280;
+  border: 2px solid #1e7280;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.voltar-link:hover {
+  background-color: #13a91d;
+  color: #000;
+  transform: scale(1.05);
+}
