@@ -1,7 +1,7 @@
 /* -------- GERAL -------- */
 body {
   font-family: Arial, sans-serif;
-  background-color: rgb( 49, 48, 48);
+  background-color: rgb(49, 48, 48);
   margin: 0;
   padding: 0;
 }
@@ -28,6 +28,8 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
+  overflow-x: auto;
+  display: block;
 }
 
 thead {
@@ -56,13 +58,27 @@ button {
   color: white;
 }
 
+.edit-btn:hover {
+  background-color: #e0a800;
+}
+
 .delete-btn {
   background-color: #dc3545;
   color: white;
 }
 
+.delete-btn:hover {
+  background-color: #c82333;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
 button#submit {
-  background-color: #1e7280;
+  background-color: rgba(0, 0, 0, 0.4333);
   color: white;
   font-size: 16px;
   padding: 10px 16px;
@@ -72,7 +88,7 @@ button#submit {
 }
 
 button#submit:hover {
-  background-color: #155d66;
+  background-color: #313435;
   transform: scale(1.03);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
@@ -93,7 +109,7 @@ form.form {
 .form-content label {
   font-weight: bold;
   margin-bottom: 5px;
-  color: #333;
+  color: #f0f0f0;
 }
 
 .form-content input,
@@ -108,15 +124,30 @@ form.form {
 .form-content input:focus,
 .form-content select:focus {
   outline: none;
-  border-color: #1e7280;
+  border-color: #1e2122;
   box-shadow: 0 0 5px rgba(30, 114, 128, 0.3);
 }
 
-.error-message {
-  color: red;
-  font-size: 12px;
+/* -------- MENSAGENS -------- */
+.mensagem-usuario {
+  margin-top: 20px;
+  padding: 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-align: center;
   display: none;
 }
+
+.mensagem-usuario.mensagem-sucesso {
+  background-color: #1c3923;
+  color: white;
+}
+
+.mensagem-usuario.mensagem-erro {
+  background-color: #dc3545;
+  color: white;
+}
+
 
 /* -------- LINK VOLTAR -------- */
 .voltar-link {
@@ -124,8 +155,8 @@ form.form {
   margin-top: 20px;
   padding: 10px 20px;
   background-color: transparent;
-  color: #1e7280;
-  border: 2px solid #1e7280;
+  color: #141616;
+  border: 2px solid #040404;
   border-radius: 6px;
   text-decoration: none;
   font-weight: bold;
@@ -133,7 +164,7 @@ form.form {
 }
 
 .voltar-link:hover {
-  background-color: #13a91d;
+  background-color: #313435;
   color: #000;
   transform: scale(1.05);
 }
