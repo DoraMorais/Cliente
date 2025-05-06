@@ -1,9 +1,11 @@
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box; 
 }
 
+/* BODY */
 body {
   background: #433f3f;
   width: 100%;
@@ -14,6 +16,7 @@ body {
   align-items: center;
 }
 
+/* MENU DE INSTRUÇÕES */
 .instructions-menu {
   display: none;
   position: fixed;
@@ -54,6 +57,11 @@ body {
   border: none;
   cursor: pointer;
   border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+#instructions-btn:hover {
+  background-color: #1e7280;
 }
 
 #close-btn {
@@ -64,8 +72,14 @@ body {
   border: none;
   cursor: pointer;
   border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
+#close-btn:hover {
+  background-color: #bd2130;
+}
+
+/* CONTAINER E HEADER */
 .container {
   background-color: rgb(49, 48, 48);
   border-radius: 20px;
@@ -73,19 +87,19 @@ body {
   max-width: 600px;
   width: 100%;
   padding: 20px; 
-  box-sizing: border-box;
- }
+}
 
 .header {
   font-family: Arial, Helvetica, sans-serif;
   background: rgba(0, 0, 0, 0.433);
   padding: 10px; 
-  border-radius:18px ;
+  border-radius: 18px;
   text-align: center;
   color: #ffffff;
   margin-bottom: 15px; 
 }
 
+/* FORMULÁRIO */
 .form {
   padding: 20px; 
 }
@@ -104,27 +118,31 @@ body {
   margin-bottom: 8px; 
 }
 
-.form-content .error-message {
-  color: red;
-  font-size: 0.872rem;
-  display: none;
-  position: absolute;
-  bottom: -25px;
-  left: 10px;
-  width: 100%;
-  margin-top: 4px;
-  text-align: center;
-}
-
-.form-content input {
+.form-content input,
+.form-content select {
   margin: 12px 0;
   display: block;
-  width: 100%; 
+  width: 100%;
   border-radius: 8px;
   padding: 12px;
   border: 3px solid rgb(242, 238, 247);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+.form-content input:focus,
+.form-content select:focus {
+  outline: none;
+  border-color: #1e7280;
+  box-shadow: 0 0 6px rgba(30, 114, 128, 0.4);
+}
+
+.form-content select {
+  background-color: white;
+}
+
+/* BOTÃO DE ENVIO */
 .form button {
   background-color: rgba(0, 0, 0, 0.4333);
   color: #ffffff;
@@ -132,14 +150,68 @@ body {
   border-radius: 14px;
   padding: 12px;
   border: 0;
-   cursor: pointer;
-  margin-top: 20px; 
+  cursor: pointer;
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s ease;
 }
 
 .form button:hover {
-  background-color: rgba(211, 196, 196, 0.6); 
+  background-color: #313435;
+  color: white;
+  transform: scale(1.03);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
+/* -------- MENSAGEM DE PERGUNTA OBRIGATÓRIA -------- */
+.mensagem-obrigatoria {
+  display: none;
+  font-size: 11px;
+  color: #cc0000;
+  margin-top: 2px;
+  margin-left: 2px;
+  font-style: normal;
+  opacity: 0.9;
+}
+
+
+/* MENSAGENS */
+.error-message {
+  color: #ff7b7b;
+  font-size: 13px;
+  display: none;
+  margin-top: 4px;
+  font-style: italic;
+}
+
+.mensagem-usuario {
+  margin-top: 20px;
+  padding: 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  display: none;
+  width: 100%;
+  text-align: center;
+}
+
+.mensagem-visivel {
+  display: block;
+}
+
+.mensagem-erro {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.mensagem-sucesso {
+  background-color: #d4edda;
+  color: #1c3923;
+  border: 1px solid #c3e6cb;
+}
+
+/* RESPONSIVO */
 @media (max-width: 768px) {
   .container {
     padding: 15px;
@@ -147,5 +219,15 @@ body {
 
   .header {
     font-size: 1.2rem;
+  }
+
+  .form button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .form-content input,
+  .form-content select {
+    padding: 10px;
   }
 }
