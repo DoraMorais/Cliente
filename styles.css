@@ -211,6 +211,31 @@ body {
   border: 1px solid #c3e6cb;
 }
 
+.endereco-box {
+  background-color: rgb(49, 48, 48);
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: 1px solid #000000;
+}
+
+.endereco-box .form-content {
+  margin-bottom: 10px;
+}
+
+.endereco-box .endereco-linha {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.endereco-box .endereco-linha .form-content {
+  flex: 1 1 45%;
+  min-width: 150px;
+}
+
+
 /* RESPONSIVO */
 @media (max-width: 768px) {
   .container {
