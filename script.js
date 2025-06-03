@@ -133,13 +133,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (!response.ok) throw new Error('Erro ao enviar dados');
 
-        exibirMensagem(
-          hiddenId ? 'Pessoa atualizada com sucesso!' : 'Pessoa cadastrada com sucesso!',
-          'sucesso'
-        );
+        const mensagemTexto = hiddenId
+          ? 'Pessoa atualizada com sucesso!'
+          : 'Pessoa cadastrada com sucesso!';
+        const tipoMensagem = 'sucesso';
+
+        exibirMensagem(mensagemTexto, tipoMensagem);
 
         setTimeout(() => {
-          window.location.href = 'listarPessoas.html';
+          window.location.href = `listarPessoas.html?mensagem=${encodeURIComponent(mensagemTexto)}&tipo=${tipoMensagem}`;
         }, 3000);
       } catch (error) {
         console.error('Erro:', error);
@@ -147,7 +149,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-  const id = new URLSearchParams(window.location.search).get('id');
+    const id = new URLSearchParams(window.location.search).get('id');
     if (id && hiddenId) {
       fetch(`http://localhost:8081/api/pessoa/${id}`)
         .then(res => {
@@ -160,7 +162,6 @@ document.addEventListener("DOMContentLoaded", function () {
           email.value = data.email;
           age.value = data.idade;
           occupation.value = data.ocupacao;
-
           rua.value = data.endereco?.rua || '';
           numero.value = data.endereco?.numero || '';
           bairro.value = data.endereco?.bairro || '';
@@ -184,6 +185,16 @@ document.addEventListener("DOMContentLoaded", function () {
       mensagemListagem.className = `mensagem-usuario mensagem-${tipo}`;
       mensagemListagem.textContent = texto;
       mensagemListagem.style.display = 'block';
+    }
+
+    // Mostrar mensagem vinda da query string (ex: sucesso no cadastro)
+    const params = new URLSearchParams(window.location.search);
+    const mensagemTexto = params.get('mensagem');
+    const tipoMensagem = params.get('tipo');
+    if (mensagemTexto && tipoMensagem) {
+      exibirMensagemListagem(mensagemTexto, tipoMensagem);
+      // Limpar a query string para não repetir a mensagem ao recarregar
+      window.history.replaceState({}, document.title, window.location.pathname);
     }
 
     async function carregarPessoas() {
