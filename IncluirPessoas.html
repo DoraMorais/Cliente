@@ -35,30 +35,65 @@
               <label for="name">Nome Completo:</label>
               <input type="text" id="name" placeholder="Digite o seu nome" />
               <span class="error-message" id="name-error">Insira seu nome completo.</span>
-              <span class="mensagem-obrigatoria" id="name-obrigatorio">Pergunta obrigatória</span>
+              <span class="mensagem-obrigatoria" id="name-obrigatorio">Resposta obrigatória</span>
             </div>
           
             <div class="form-content">
               <label for="email">Seu email:</label>
               <input type="text" id="email" placeholder="Digite o seu email" />
               <span class="error-message" id="email-error">Insira um email válido.</span>
-              <span class="mensagem-obrigatoria" id="email-obrigatorio">Pergunta obrigatória</span>
+              <span class="mensagem-obrigatoria" id="email-obrigatorio">Resposta obrigatória</span>
             </div>
           
             <div class="form-content">
               <label for="age">Idade:</label>
               <input type="number" id="age" placeholder="Digite a sua idade" />
               <span class="error-message" id="age-error">Por favor, insira sua idade.</span>
-              <span class="mensagem-obrigatoria" id="age-obrigatorio">Pergunta obrigatória</span>
+              <span class="mensagem-obrigatoria" id="age-obrigatorio">Resposta obrigatória</span>
             </div>
           
-            <div class="form-content">
-              <label for="address">Seu endereço:</label>
-              <input type="text" id="address" placeholder="Digite o seu endereço" autocomplete="street-address" />
-              <span class="error-message" id="address-error">Preencha seu endereço.</span>
-              <span class="mensagem-obrigatoria" id="address-obrigatorio">Pergunta obrigatória</span>
-            </div>
-          
+        <div class="endereco-box">
+      <div class="endereco-linha">
+       <div class="form-content">
+      <label for="rua">Rua:</label>
+      <input type="text" id="rua" placeholder="Digite a rua" />
+      <span class="error-message" id="rua-error">Preencha a rua corretamente.</span>
+      <span class="mensagem-obrigatoria" id="rua-obrigatorio">Resposta obrigatória</span>
+    </div>
+
+    <div class="form-content">
+      <label for="numero">Número:</label>
+      <input type="number" id="numero" placeholder="Digite o número" />
+      <span class="error-message" id="numero-error">Preencha o número corretamente.</span>
+      <span class="mensagem-obrigatoria" id="numero-obrigatorio">Resposta obrigatória</span>
+    </div>
+  </div>
+
+  <div class="endereco-linha">
+    <div class="form-content">
+      <label for="bairro">Bairro:</label>
+      <input type="text" id="bairro" placeholder="Digite o bairro" />
+      <span class="error-message" id="bairro-error">Preencha o bairro corretamente.</span>
+      <span class="mensagem-obrigatoria" id="bairro-obrigatorio">Resposta obrigatória</span>
+    </div>
+
+    <div class="form-content">
+      <label for="cidade">Cidade:</label>
+      <input type="text" id="cidade" placeholder="Digite a cidade" />
+      <span class="error-message" id="cidade-error">Preencha a cidade corretamente.</span>
+      <span class="mensagem-obrigatoria" id="cidade-obrigatorio">Resposta obrigatória</span>
+    </div>
+  </div>
+
+  <div class="form-content">
+    <label for="cep">CEP:</label>
+    <input type="text" id="cep" placeholder="Digite o CEP" />
+    <span class="error-message" id="cep-error">Preencha o CEP corretamente.</span>
+    <span class="mensagem-obrigatoria" id="cep-obrigatorio">Resposta obrigatória</span>
+  </div>
+</div>
+
+
             <div class="form-content">
               <label for="opcoes">Ocupação:</label>
               <select id="opcoes" name="opcao">
@@ -70,23 +105,23 @@
                 <option value="Procurando primeiro emprego">Procurando primeiro emprego</option>
               </select> 
               <span id="opcoes-error" class="error-message">Selecione uma ocupação.</span>
-              <span class="mensagem-obrigatoria" id="opcoes-obrigatorio">Pergunta obrigatória</span>
+              <span class="mensagem-obrigatoria" id="opcoes-obrigatorio">Resposta obrigatória</span>
             </div>
           
             <div class="form-content">
               <label for="password">Sua Senha:</label>
               <input type="password" id="password" placeholder="Digite a sua senha" autocomplete="new-password" />
               <span class="error-message" id="password-error">Preencha o campo de Senha</span>
-              <span class="mensagem-obrigatoria" id="password-obrigatorio">Pergunta obrigatória</span>
+              <span class="mensagem-obrigatoria" id="password-obrigatorio">Resposta obrigatória</span>
             </div>
           
             <div class="form-content">
               <label for="passwordconfirmation">Confirmação de senha:</label>
               <input type="password" id="passwordconfirmation" placeholder="Confirme a sua senha" autocomplete="new-password" />
               <span class="error-message" id="passwordconfirmation-error">As senhas não coincidem.</span>
-              <span class="mensagem-obrigatoria" id="passwordconfirmation-obrigatorio">Pergunta obrigatória</span>
+              <span class="mensagem-obrigatoria" id="passwordconfirmation-obrigatorio">Resposta obrigatória</span>
             </div>
-          
+        
             <button id="submit" type="submit"> 
               <h3>
                 <b>
