@@ -7,21 +7,30 @@ document.addEventListener("DOMContentLoaded", function () {
     const userName = document.getElementById('name');
     const email = document.getElementById('email');
     const age = document.getElementById('age');
-    const address = document.getElementById('address');
     const occupation = document.getElementById('opcoes');
     const password = document.getElementById('password');
     const passwordConfirmation = document.getElementById('passwordconfirmation');
     const hiddenId = document.getElementById('pessoa-id');
 
+    // Novos campos de endereço
+    const rua = document.getElementById('rua');
+    const numero = document.getElementById('numero');
+    const bairro = document.getElementById('bairro');
+    const cidade = document.getElementById('cidade');
+    const cep = document.getElementById('cep');
+
     const campos = [
       { input: userName, errorId: 'name-error', obrigatorioId: 'name-obrigatorio' },
       { input: email, errorId: 'email-error', obrigatorioId: 'email-obrigatorio' },
       { input: age, errorId: 'age-error', obrigatorioId: 'age-obrigatorio' },
-      { input: address, errorId: 'address-error', obrigatorioId: 'address-obrigatorio' },
-      { input: occupation, errorId: 'opcoes-error', obrigatorioId: 'opcoes-obrigatorio' }
+      { input: occupation, errorId: 'opcoes-error', obrigatorioId: 'opcoes-obrigatorio' },
+      { input: rua, errorId: 'rua-error', obrigatorioId: 'rua-obrigatorio' },
+      { input: numero, errorId: 'numero-error', obrigatorioId: 'numero-obrigatorio' },
+      { input: bairro, errorId: 'bairro-error', obrigatorioId: 'bairro-obrigatorio' },
+      { input: cidade, errorId: 'cidade-error', obrigatorioId: 'cidade-obrigatorio' },
+      { input: cep, errorId: 'cep-error', obrigatorioId: 'cep-obrigatorio' }
     ];
 
-    // Adiciona campos de senha apenas se existirem no DOM
     if (password && passwordConfirmation) {
       campos.push(
         { input: password, errorId: 'password-error', obrigatorioId: 'password-obrigatorio' },
@@ -53,7 +62,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
       let formIsValid = true;
 
-      // Esconde todas as mensagens
       document.querySelectorAll('.error-message').forEach(msg => msg.style.display = 'none');
       document.querySelectorAll('.mensagem-obrigatoria').forEach(msg => msg.style.display = 'none');
       if (mensagem) mensagem.style.display = 'none';
@@ -82,7 +90,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
 
-      // Só valida obrigatoriedade da senha em cadastros
       if (!hiddenId && password && !password.value.trim()) {
         const obrigatorio = document.getElementById('password-obrigatorio');
         if (obrigatorio) obrigatorio.style.display = 'inline';
@@ -98,8 +105,14 @@ document.addEventListener("DOMContentLoaded", function () {
         nome: userName.value,
         email: email.value,
         idade: parseInt(age.value),
-        endereco: address.value,
-        ocupacao: occupation.value
+        ocupacao: occupation.value,
+        endereco: {
+          rua: rua.value,
+          numero: numero.value,
+          bairro: bairro.value,
+          cidade: cidade.value,
+          cep: cep.value
+        }
       };
 
       if (!hiddenId && password) {
@@ -127,15 +140,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
         setTimeout(() => {
           window.location.href = 'listarPessoas.html';
-        }, 2000);
+        }, 3000);
       } catch (error) {
         console.error('Erro:', error);
         exibirMensagem('Erro ao salvar os dados. Tente novamente.', 'erro');
       }
     });
 
-    // Carregamento dos dados para edição
-    const id = new URLSearchParams(window.location.search).get('id');
+  const id = new URLSearchParams(window.location.search).get('id');
     if (id && hiddenId) {
       fetch(`http://localhost:8081/api/pessoa/${id}`)
         .then(res => {
@@ -147,8 +159,13 @@ document.addEventListener("DOMContentLoaded", function () {
           userName.value = data.nome;
           email.value = data.email;
           age.value = data.idade;
-          address.value = data.endereco;
           occupation.value = data.ocupacao;
+
+          rua.value = data.endereco?.rua || '';
+          numero.value = data.endereco?.numero || '';
+          bairro.value = data.endereco?.bairro || '';
+          cidade.value = data.endereco?.cidade || '';
+          cep.value = data.endereco?.cep || '';
         })
         .catch(err => {
           console.error('Erro ao carregar dados:', err);
@@ -177,12 +194,16 @@ document.addEventListener("DOMContentLoaded", function () {
         tabela.innerHTML = "";
 
         pessoas.forEach((pessoa) => {
+          const enderecoFormatado = pessoa.endereco
+            ? `${pessoa.endereco.rua}, ${pessoa.endereco.numero} - ${pessoa.endereco.bairro}, ${pessoa.endereco.cidade} - ${pessoa.endereco.cep}`
+            : '';
+
           const tr = document.createElement("tr");
           tr.innerHTML = `
             <td>${pessoa.nome}</td>
             <td>${pessoa.email}</td>
             <td>${pessoa.idade}</td>
-            <td>${pessoa.endereco}</td>
+            <td>${enderecoFormatado}</td>
             <td>${pessoa.ocupacao}</td>
             <td>
               <div class="action-buttons">
