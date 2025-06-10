@@ -175,6 +175,83 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  // --- Login ---
+document.addEventListener("DOMContentLoaded", () => {
+  const loginForm = document.getElementById("login-form");
+  const emailInput = document.getElementById("email");
+  const passwordInput = document.getElementById("password");
+
+  // Oculta mensagens de erro por padrão
+  const emailError = document.getElementById("email-error");
+  const passwordError = document.getElementById("password-error");
+
+  loginForm.addEventListener("submit", (event) => {
+    event.preventDefault(); // Evita o recarregamento da página
+
+    // Limpa mensagens de erro
+    emailError.style.display = "none";
+    passwordError.style.display = "none";
+
+    const email = emailInput.value.trim();
+    const password = passwordInput.value.trim();
+
+    let isValid = true;
+
+    // Validação básica do email
+    if (!validateEmail(email)) {
+      emailError.style.display = "block";
+      isValid = false;
+    }
+
+    // Validação básica da senha
+    if (password.length === 0) {
+      passwordError.style.display = "block";
+      isValid = false;
+    }
+
+    if (!isValid) {
+      return; // Sai se houver erro
+    }
+
+    // Aqui você pode simular a verificação do usuário
+    // (Exemplo: checar no localStorage ou chamar o backend)
+    // Vamos simular com localStorage:
+    const usuariosCadastrados = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+    const usuarioEncontrado = usuariosCadastrados.find(
+      (user) => user.email === email && user.password === password
+    );
+
+    if (usuarioEncontrado) {
+      // Login bem-sucedido
+      alert("Login bem-sucedido! 🎉");
+      window.location.href = "incluirPessoas.html"; // Substitua pela página desejada
+    } else {
+      // Usuário não encontrado
+      alert("Usuário não encontrado! Vamos te redirecionar para o cadastro.");
+      window.location.href = "registroPessoas.html"; // Redireciona para a página de cadastro
+    }
+  });
+
+  function validateEmail(email) {
+    // Regex simples para validar email
+    const re = /\S+@\S+\.\S+/;
+    return re.test(email);
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
   // --- Listagem + Exclusão ---
   const tabela = document.querySelector("#pessoas-table tbody");
   if (tabela) {
