@@ -256,3 +256,23 @@ body {
     padding: 10px;
   }
 }
+
+/* -------- LINK VOLTAR -------- */
+.seguir-link {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: #141616;
+  border: 2px solid #040404;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.seguir-link:hover {
+  background-color: #313435;
+  color: #000;
+  transform: scale(1.05);
+}
