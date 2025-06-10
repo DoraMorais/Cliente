@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+     <div class="container">
+        <section class="header">
+            <h1>Adicione suas informações e realize seu login</h1>
+        </section>
+
+    <form id="form" class="form">
+      <div class="form-content">
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Digite seu email" required>
+        <span class="error-message" id="email-error">Insira um email válido.</span>
+      </div>
+
+      <div class="form-content">
+        <label for="password">Senha:</label>
+        <input type="password" id="password" placeholder="Digite sua senha" required>
+        <span class="error-message" id="password-error">A senha é obrigatória.</span>
+      </div>
+
+      <button id="submit" type="submit">
+        <b>Salvar</b>
+      </button>
+    </form>
+
+    <a href="registroPessoas.html" class="seguir-link">
+      Clique aqui para registrar seu login
+    </a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
