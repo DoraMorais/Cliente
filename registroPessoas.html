@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+   <div class="container">
+        <section class="header">
+            <h1>Registre-se abaixo</h1>
+        </section>
+        
+    <form id="form" class="form">
+      <div class="form-content">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" placeholder="Digite seu nome" required>
+        <span class="error-message" id="name-error">O nome é obrigatório.</span>
+      </div>
+
+      <div class="form-content">
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Digite seu email" required>
+        <span class="error-message" id="email-error">Insira um email válido.</span>
+      </div>
+
+      <div class="form-content">
+        <label for="login">Login:</label>
+        <input type="text" id="login" placeholder="Digite seu login" required>
+        <span class="error-message" id="login-error">O login é obrigatório.</span>
+      </div>
+
+      <div class="form-content">
+        <label for="password">Senha:</label>
+        <input type="password" id="password" placeholder="Digite sua senha" required>
+        <span class="error-message" id="password-error">A senha é obrigatória.</span>
+      </div>
+
+      <button id="submit" type="submit">
+        <b>Salvar</b>
+      </button>
+    </form>
+
+    <a href="loginPessoas.html" class="seguir-link">
+      Já tem uma conta? Clique aqui para fazer login
+    </a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
